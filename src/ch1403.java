@@ -16,14 +16,17 @@ public class ch1403 extends Frame implements WindowListener {
         f.setVisible(true);
 
         Integer[] arr = new Integer[52];
-        for (int i = 1; i < arr.length; i++) {
-            arr[i] = i;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i+1;
         }
         Collections.shuffle(Arrays.asList(arr));
         file1 = arr[1].toString();
         file2 = arr[2].toString();
         file3 = arr[3].toString();
         System.out.println(file1);
+        System.out.println(file2);
+        System.out.println(file3);
+        System.out.println(Arrays.toString(arr));
 
 
     }
@@ -38,9 +41,9 @@ public class ch1403 extends Frame implements WindowListener {
     class MyCanvas extends Canvas {
         public void paint(Graphics g) {
             Toolkit myToolkit = Toolkit.getDefaultToolkit();
-            Image myImage = myToolkit.getImage(path + file1 + ".jpg"); // 경로수정해주시면됩니다
-            Image myImage2 = myToolkit.getImage(path + file2 + ".jpg"); // 경로수정해주시면됩니다
-            Image myImage3 = myToolkit.getImage(path + file3 + ".jpg"); // 경로수정해주시면됩니다
+            Image myImage = myToolkit.getImage(path + file1 + ".jpg");
+            Image myImage2 = myToolkit.getImage(path + file2 + ".jpg");
+            Image myImage3 = myToolkit.getImage(path + file3 + ".jpg");
             g.drawImage(myImage, 0, 0, this);
             g.drawImage(myImage2, 250, 0, this);
             g.drawImage(myImage3, 500, 0, this);
